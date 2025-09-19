@@ -18,3 +18,16 @@ class VectorStore:
 
         #salvar os dados
         np.save(self.path.replace(".faiss", "_meta.npy"), metadata)
+
+    def save(self):
+        faiss.write_index(self.index, self.path)
+
+    def load(self):
+        if os.path.exists(self.path):
+            self.index = faiss.read_index(self.path)
+        return self.index
+    
+    #retorna as distancias dos indicies dos vetores mais proximos
+    def search(self, query_vector, k=3):
+        D, I = self.index.search(np.array([query_vector]).astype('float32'), k)
+        return D, I
