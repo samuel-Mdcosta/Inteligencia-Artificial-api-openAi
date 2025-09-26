@@ -7,4 +7,18 @@ def ia():
     while True:
         pergunta_usuario = input("O que deseja? ").strip().lower()
 
-        
+        if pergunta_usuario == "sair":
+            print("IA encerrada.")
+            break
+
+        elif "quiz" in pergunta_usuario:
+            print("\n Gerando perguntas")
+            gerar_pergunta()
+
+        else:
+            print("\n IA respondendo")
+            resposta = gerar_resposta(pergunta_usuario)
+            print(resposta)
+
+if __name__ == "__main__":
+    ia()
