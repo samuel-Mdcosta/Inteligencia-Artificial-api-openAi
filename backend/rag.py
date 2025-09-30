@@ -5,8 +5,8 @@ from openai import OpenAI
 
 # --- Configurações ---
 # Use as mesmas configurações do script que gera os embeddings
-EMBEDDING_MODEL = ""
-LLM_MODEL = ""
+EMBEDDING_MODEL = "text-embedding-3-small"
+LLM_MODEL = "gpt-3.5-turbo"
 VECTOR_DIM = 1536  # Dimensão para "text-embedding-3-small"
 INDEX_PATH = "embeddings/index.faiss"
 

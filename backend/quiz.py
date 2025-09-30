@@ -14,7 +14,7 @@ def contexto():
     index = vs.load()
 
     quiz_embedding = client.embeddings.create(
-        model = "#######",
+        model = "text-embedding-3-small",
         input = "Gerar Quiz"
     ).data[0].embedding
 
@@ -56,7 +56,7 @@ def gerar_pergunta():
     }}
     """
     resposta = client.chat.completions.creat(
-        model = "#######",
+        model = "gpt-3.5-turbo",
         temperature = 0.2,
         messages=[{"role": "user", "content": persona}]
     )

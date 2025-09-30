@@ -7,7 +7,7 @@ from text_utils import smart_chunk_text # <-- 1. Importar a função de chunking
 from openai import OpenAI
 
 # --- Configurações (Consistentes com rag.py) ---
-EMBEDDING_MODEL = ""
+EMBEDDING_MODEL = "text-embedding-3-small"
 VECTOR_DIM = 1536
 INDEX_PATH = "embeddings/index.faiss"
 
