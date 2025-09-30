@@ -1,8 +1,11 @@
 from rag import gerar_resposta
 from quiz import gerar_pergunta
+from utils import get_api_key
 
 def ia():
     print("IA iniciada! Pergunte algo ou digite 'Quiz' para obter perguntas. Digite 'Sair' para encerrar a IA.")
+
+    api_client = get_api_key()
 
     while True:
         pergunta_usuario = input("O que deseja? ").strip().lower()
@@ -17,7 +20,7 @@ def ia():
 
         else:
             print("\n IA respondendo")
-            resposta = gerar_resposta(pergunta_usuario)
+            resposta = gerar_resposta(pergunta_usuario, api_client)
             print(resposta)
 
 if __name__ == "__main__":

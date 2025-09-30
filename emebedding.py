@@ -48,8 +48,8 @@ if __name__ == "__main__":
     # Garante que o diretório de embeddings exista
     os.makedirs(os.path.dirname(INDEX_PATH), exist_ok=True)
 
-    api_client = get_api_key()
-    embeddings, chunks = load_and_process_pdfs(api_client)
+    client = get_api_key()
+    embeddings, chunks = load_and_process_pdfs(client)
 
     if embeddings and chunks:
         # 4. Adicionar os embeddings e os chunks ao VectorStore
