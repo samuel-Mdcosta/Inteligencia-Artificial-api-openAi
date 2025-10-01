@@ -18,7 +18,7 @@ def contexto():
         input = "Gerar Quiz"
     ).data[0].embedding
 
-    I, D = vs.search(quiz_embedding, k = 2)
+    I, D = vs.search(quiz_embedding, k = 1)
     texts = np.load("embeddings/index_meta.npy", allow_pickle=True)
 
     resultado_contexto = "\n".join([texts[i] for i in I[0]])
